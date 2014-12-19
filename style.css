@@ -17,13 +17,14 @@ and open the template in the editor.
         right: 0px;
     }
     .headimage {
-    position: relative;
-    background-color: #222;
-    font-size: 60px;
-}
+        position: relative;
+        background-color: #222;
+        font-size: 60px;
+    }
 }
 @media screen and (max-width:749px) {
     .head-title {
+        display: none;
         width: 50%;
         float:right;
         position: absolute;
@@ -31,11 +32,12 @@ and open the template in the editor.
         right: 0px;
     }
     .headimage {
-    position: relative;
-    background-color: #222;
-    font-size: 60px;
+        position: relative;
+        background-color: #222;
+        font-size: 60px;
+    }
 }
-}
+
 
 
 
@@ -45,9 +47,12 @@ and open the template in the editor.
 }
 
 body {
-    background-color: #537759;
+    background-color: #111;
     background-image: url(img/background.jpg);
     background-size: 120%;
+    margin-bottom: 1em;
+    position: relative;
+    
 }
 
 .testpost {
@@ -56,10 +61,11 @@ body {
 }
 
 .game-post {
-    background-color: #151515;
+    background-color: #151715;
     padding-left: 1em;
     padding-right: 1em;
-    margin-top: 2em;
+    padding-top: 1em;
+    margin-top: 1em;
     border: 1px solid #111;
 }
 
@@ -70,17 +76,15 @@ body {
 }
 
 .game-header {
-    //background-color: rgba(25,25,25,1);
-
+    font-size: 30px;
 }
 
 .game-description {
-    //overflow: auto;
+    position: relative;
 }
 
 .game-rating {
     border: 1px solid #111;
-    padding-top: 1em;
     padding-bottom: 1em;
 }
 
@@ -89,6 +93,7 @@ body {
 }
 
 .game-body {
+    
     padding-left: 1em;
 }
 
@@ -109,7 +114,11 @@ body {
 
 .game-footer {
     font-size: 12px;
-    float:right;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-top: 1em;
+    padding-right: 1em;
 }
 
 .blog-text {
@@ -153,4 +162,8 @@ body {
 
 .pager div > span.disabled {
     color: #111;
+}
+
+.page-footer{
+    background-color: #252525;
 }
