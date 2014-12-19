@@ -1,26 +1,14 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>INDIECASE</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-
-
-        <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-
         <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/0.9.2/lodash.js"></script>
-        <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-
         <script type="text/javascript" src="js/mustache.js-master/mustache.js" ></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="https://raw.githubusercontent.com/cowboy/jquery-hashchange/master/jquery.ba-hashchange.js"></script>
@@ -28,80 +16,57 @@ and open the template in the editor.
     </head>
     <body>
         <div class="headimage">
-            <a href="#">
+            <a href="?home=''">
                 <img  class="sizeble-head"  src="img/Joy3.png" alt="INDIECASE"/>
             </a>
             <div class="head-title"><span>INDIECASE</span> </div>
-
         </div>
-
 
         <nav class="navbar navbar-inverse" role="navigation">
             <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header headimage">
-
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
                     </button>
-
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand navbar-inverse" href="?home=''">
                         INDIECASE   
                     </a>
-
                 </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Games <span class="sr-only">(current)</span></a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Developers <span class="caret"></span></a>
+                        <li class="active menuitem"><a href="?home=''">Games<span class="sr-only">(current)</span></a></li>
+                        <li class="dropdown menuitem">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Developers<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">All</a></li>
+                                <li class="divider"></li>
                                 <li><a href="#">Game Designs</a></li>
                                 <li><a href="#">Programming</a></li>
                                 <li><a href="#">Musics</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">One more separated link</a></li>
                             </ul>
                         </li>
                     </ul>
-                    <form class="navbar-form navbar-right" role="search" method="GET" action="" name="form1">
+                    <form class="navbar-form navbar-right navbar-inverse" role="search" name="form1">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Search" id="searchField">
                         </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
                     </form>
-<div id="result"></div>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
+                </div>
+            </div>
         </nav>
 
         <div id="templates" style="display: none;"></div>
-
-
-
-        <div id="game-pagination-top">Pagination-top</div>
-
+        
         <div class="container">
-
+            <div id="game-pagination-top"></div>
             <div class="row">
-
-                <div class="testpost blog-text" id="page-post">
-                    Posts
-                </div>
-
+                <div class="testpost blog-text" id="page-post"></div>
             </div>
+            <div id="game-pagination-bottom"></div>
+            
         </div>
-
-        <div id="game-pagination-bottom">Pagination-bottom</div>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <footer class='page-footer'>EPAM blog task - create by Dmitry Kozlov 2014</footer>
         <script src="js/bootstrap.min.js"></script>
         <script src="script.js"></script>
     </body>

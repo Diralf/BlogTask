@@ -1,51 +1,68 @@
 <div id="template-post-preview">
     {{#post}}
     <div class="game-post img-rounded" >
-        <a class="nonoutline" href="#" onclick="openPost({{id}})">
-            <div class="game-header">
-                
-                <h2>{{title}}</h2>
-                
-            </div>
-        </a>
+        {{#full}}
+        <div class="game-header">
+            <span>{{title}}</span>
+        </div>
+        {{/full}}
+
+
         <div class="game-description row">
-            <div class="game-img col-sm-7">
-                <a href="#" onclick="openPost({{id}})">
+            <div class="game-img col-sm-6">
+                {{^full}}<a href="?post={{id}}">{{/full}}
                     <img class="sizeble-img"  src={{image}}>
-                </a>
+                    {{^full}}</a>{{/full}}
             </div>
-            <div class='game-rating col-sm-4'>
-                <p>Title: {{title}}<br>
+            <div class='game-rating col-sm-5'>
+                {{^full}}
+                <a class="nonoutline" href="?post={{id}}"> 
+                    <div class="game-header">
+
+                        <span>{{title}}</span>
+
+                    </div>
+                </a>
+                {{/full}}
+                <p>{{#full}}Title: {{title}}<br>{{/full}}
                     Genre: {{genre}}<br>
                     Developer: {{developer}}<br>
                     Release Date: {{release}}</p>
                 <div>
                     <p>Tags:</p>
                     {{#tags}}
-                    <span class="label label-primary">{{.}}</span>
+                    <span class="label label-success">{{.}}</span>
                     {{/tags}}
                 </div>
+
+            </div>
+            <div class="game-footer">
+                date: {{date}} author: {{author}}
             </div>
         </div>
         {{#full}}
-        <div class="game-body">
-            <p>{{description}}</p>
+        <div class="row">
+            <div class="game-body col-sm-7">
+                <p>{{description}}</p>
+            </div>
         </div>
         <div>
             <div class="game-preview-screenshots" >
                 {{#screenshots}}
+
                 <div class="game-preview-screenshot">
-                    <img data-target="#carousel-example-generic" data-slide-to="{{id}}" class="img-rounded mini-img {{^active}}active{{/active}}" src={{img}} alt="...">       
+                    <img data-target="#carousel-example-generic" data-slide-to="{{id}}" class="img-rounded mini-img {{^active}}active{{/active}}" src={{img}} alt="...">     
                 </div>
+
                 {{/screenshots}}
             </div>
         </div>
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-wrap="false">
             <div class="carousel-inner" role="listbox">
                 {{#screenshots}}
-                <div class="item {{^active}}active{{/active}}" >
-                    <img src={{img}} alt="...">
-                </div>
+                    <div class="item {{^active}}active{{/active}}" >
+                        <a href={{img}}><img src={{img}} alt="..."></a>
+                    </div>
                 {{/screenshots}}
             </div>
             <!-- Controls -->
@@ -60,9 +77,7 @@
         </div>
 
         {{/full}}
-        <div class="game-footer">
-            date: {{date}} author: {{author}}
-        </div>
+
     </div>
     {{/post}}
 
