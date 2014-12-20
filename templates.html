@@ -1,6 +1,6 @@
 <div id="template-post-preview">
     {{#post}}
-    <div class="game-post img-rounded" >
+    <div class="game-post img-rounded testpost" >
         {{#full}}
         <div class="game-header">
             <span>{{title}}</span>
@@ -40,12 +40,17 @@
                 date: {{date}} author: {{author}}
             </div>
         </div>
+
         {{#full}}
         <div class="row">
             <div class="game-body col-sm-7">
                 <p>{{description}}</p>
             </div>
         </div>
+        {{/full}}
+    </div>
+    {{#full}}
+    <div class="game-screenshot img-rounded" id="screenshot">
         <div>
             <div class="game-preview-screenshots" >
                 {{#screenshots}}
@@ -57,12 +62,13 @@
                 {{/screenshots}}
             </div>
         </div>
+
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-wrap="false">
             <div class="carousel-inner" role="listbox">
                 {{#screenshots}}
-                    <div class="item {{^active}}active{{/active}}" >
-                        <a href={{img}}><img src={{img}} alt="..."></a>
-                    </div>
+                <div class="item {{^active}}active{{/active}}" >
+                    <a href={{img}}><img class="testpost" src={{img}} alt="..."></a>
+                </div>
                 {{/screenshots}}
             </div>
             <!-- Controls -->
@@ -75,16 +81,19 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-
-        {{/full}}
-
     </div>
-    {{/post}}
+    {{/full}}
 
+
+    {{/post}}
+    {{^post}}
+    <div class="game-post img-rounded testpost" >Publications not found.</div>
+    {{/post}}
 </div>
 
 
 <div id="template-pagination">
+    {{#visible}}
     <div class="pager" id="pager">
         <div >
             {{#first}}
@@ -106,5 +115,5 @@
             {{/last}}
         </div>
     </div>
-
+    {{/visible}}
 </div>
