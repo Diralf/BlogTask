@@ -1,0 +1,25 @@
+<div id="template-pagination">
+    {{#pagination}}
+    <div class="pager" id="pager">
+        <div >
+            {{#first}}
+            <span class="disabled">prev</span>
+            {{/first}}
+            {{^first}}
+            <span onclick="changePage({{prev}})" >prev</span>
+            {{/first}}
+        </div>
+        {{#pages}}
+        <div><span onclick="changePage({{number}});" class="page {{#active}}active{{/active}}" >{{number}}</span></div>
+        {{/pages}}
+        <div>
+            {{#last}}
+            <span class="disabled">next</span>
+            {{/last}}
+            {{^last}}
+            <span onclick="changePage({{next}})">next</span>
+            {{/last}}
+        </div>
+    </div>
+    {{/pagination}}
+</div>
