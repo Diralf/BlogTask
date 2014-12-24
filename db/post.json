@@ -1,6 +1,7 @@
 {
     "post" : [
         {
+            "id": 0,
             "title": "Super Meat Boy",
             "image": "http://cdn.akamai.steamstatic.com/steam/apps/40800/header.jpg?t=1386730867",
             "genre": "Indie",
@@ -21,6 +22,7 @@
             "date": "01/12/2014",
             "author": "Journalkin"
         }, {
+            "id": 1,
             "title": "Braid",
             "image": "http://cdn.akamai.steamstatic.com/steam/apps/26800/header.jpg?t=1413585054",
             "genre": "Casual, Indie, Strategy",
@@ -47,6 +49,7 @@
             "date": "01/12/2014",
             "author": "Journalkin"
         }, {
+            "id": 2,
             "title": "FEZ",
             "image": "http://cdn.akamai.steamstatic.com/steam/apps/224760/header.jpg?t=1383936243",
             "genre": "Indie",
@@ -68,6 +71,7 @@
             "date": "01/12/2014",
             "author": "Journalkin"
         }, {
+            "id": 3,
             "title": "The Binding of Isaac",
             "image": "http://cdn.akamai.steamstatic.com/steam/apps/113200/header.jpg?t=1380821401",
             "genre": "Action, Adventure, Indie, RPG",
@@ -86,6 +90,7 @@
             "date": "01/12/2014",
             "author": "Journalkin"
         }, {
+            "id": 4,
             "title": "Bastion",
             "image": "http://cdn.akamai.steamstatic.com/steam/apps/107100/header.jpg?t=1409681307",
             "genre": "Action, Indie, RPG",
@@ -111,6 +116,7 @@
             "date": "01/12/2014",
             "author": "Journalkin"
         }, {
+            "id": 5,
             "title": "To the Moon",
             "image": "http://cdn.akamai.steamstatic.com/steam/apps/206440/header.jpg?t=1418942265",
             "genre": "Adventure, Indie, RPG",
@@ -133,6 +139,7 @@
             "date": "01/12/2014",
             "author": "Journalkin"
         }, {
+            "id": 6,
             "title": "Don't Starve",
             "image": "http://cdn.akamai.steamstatic.com/steam/apps/219740/header.jpg?t=1418667044",
             "genre": "Adventure, Indie, Simulation",
@@ -154,6 +161,7 @@
             "date": "01/12/2014",
             "author": "Journalkin"
         }, {
+            "id": 7,
             "title": "Castle Crashers",
             "image": "http://cdn.akamai.steamstatic.com/steam/apps/204360/header.jpg?t=1417815853",
             "genre": "Action, Adventure, Casual, Indie, RPG",
@@ -175,6 +183,7 @@
             "date": "01/12/2014",
             "author": "Journalkin"
         }, {
+            "id": 8,
             "title": "Superbrothers: Sword & Sworcery EP",
             "image": "http://cdn.akamai.steamstatic.com/steam/apps/204060/header.jpg?t=1354530680",
             "genre": "Adventure, Indie",
@@ -195,6 +204,7 @@
             "date": "01/12/2014",
             "author": "Journalkin"
         }, {
+            "id": 9,
             "title": "Machinarium",
             "image": "http://cdn.akamai.steamstatic.com/steam/apps/40700/header.jpg?t=1398242615",
             "genre": "Adventure, Indie",

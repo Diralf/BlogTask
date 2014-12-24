@@ -1,26 +1,33 @@
 var db = require('../db/post');
 var fs = require('fs');
-var pagination = require('./pagination');
-
-var createContent = function (db, page) {
-    var data = {
-        "full": false,
-        "pagination": {},
-        "post": []
-    };
-    var pag = pagination.getData(db.post,page);
-    data.pagination = pag; 
-    data.post = db.post.slice(pag.begin, pag.end);
-    return data;
-};
+var mustacheManager = require("../mustache");
 
 exports.index = function (req, res) {
-    res.render('index', createContent(db,pagination.page));
+    res.render('index', mustacheManager.dataOnPage(db));
 };
 
 exports.content = function (req, res) {
-    console.log(req.param('page'));
-    res.render('content', createContent(db, req.param('page')));
+    console.log("page=" + req.param('num'));
+    var filter = req.param('filter');
+    var id = req.param('id');
+    var page = req.param('num');
+
+    var data;
+    if (filter) {
+        console.log("filtered");
+        data = mustacheManager.dataSearch(db, filter);
+    } else {
+        console.log("original");
+        data = db;
+    }
+
+    var content = {};
+    if (id) {
+        content = mustacheManager.dataOnePost(data, id);
+    } else {
+        content = mustacheManager.dataOnPage(data,page);
+    }
+    res.render('content', content);
 };
 
 /*

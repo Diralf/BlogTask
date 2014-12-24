@@ -1,19 +1,8 @@
-$("#form").click(function () {
-    console.log("form submit log");
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "/content", true);
-    xhr.send(JSON.stringify({"page": 3}));
-    xhr.onload = function () {
-        console.log('response! ' + this.responseText);
-    };
-    return false;
-});
-
 
 var changePage = function (num) {
     console.log("page click " + num);
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/content?page=" + num, true);
+    xhr.open("GET", "/content" + searchPath() + "/page/" + num, true);
     xhr.send();
     xhr.onload = function () {
         var output = this.responseText;
@@ -21,11 +10,31 @@ var changePage = function (num) {
         $("#content").html(output);
     };
 };
+
+var openPost = function (id) {
+    console.log("open post click " + id);
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/content/" + id, true);
+    xhr.send();
+    xhr.onload = function () {
+        var output = this.responseText;
+        console.log('post get');
+        $("#content").html(output);
+        $('.carousel').carousel(0);
+    };
+};
+
+var searchPath = function () {
+    var filter = $('#search-field').val();
+    return filter ? "/search/" + filter : "";
+};
+
 $(document).ready(function () {
-    $('.home').click(function () {
+    $(".home").click(function () {
         console.log("home click");
+        $('#search-field').val("");
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "/content?page=1&search=''", true);
+        xhr.open("GET", '/content', true);
         xhr.send();
         xhr.onload = function () {
             var output = this.responseText;
@@ -37,6 +46,19 @@ $(document).ready(function () {
     $(".menuitem").click(function () {
         $(".active").removeClass("active");
         $(this).addClass("active");
+    });
+
+    $('#search-button').click(function () {
+        var filter = $('#search-field').val();
+        console.log("search click filter=" + filter);
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "/content" + searchPath(), true);
+        xhr.send();
+        xhr.onload = function () {
+            var output = this.responseText;
+            console.log('search get');
+            $("#content").html(output);
+        };
     });
 });
 

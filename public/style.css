@@ -189,3 +189,7 @@ body {
 html,body{
     height: 100%;
 } 
+
+.openpost , .home {
+    cursor: pointer;
+}

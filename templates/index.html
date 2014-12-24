@@ -19,9 +19,7 @@
     </head>
     <body>
         <div class="headimage home">
-            <a href="">
-                <img  class="sizeble-head"  src="img/Joy3.png" alt="INDIECASE"/>
-            </a>
+            <img  class="sizeble-head"  src="img/Joy3.png" alt="INDIECASE"/>
             <div class="head-title"><span>INDIECASE</span> </div>
         </div>
 
@@ -34,13 +32,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand navbar-inverse home" href="">
+                    <div class="navbar-brand navbar-inverse home" >
                         INDIECASE   
-                    </a>
+                    </div>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active menuitem home"><a href="">Games<span class="sr-only">(current)</span></a></li>
+                        <li class="active menuitem home"><a href="#">Games<span class="sr-only">(current)</span></a></li>
                         <li class="dropdown menuitem">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Developers<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -54,15 +52,14 @@
                     </ul>
                     <div class="navbar-form navbar-right navbar-inverse" id="form" >
                         <div class="form-group" >
-                            <input type="text" class="form-control" placeholder="Title..." id="searchField">
+                            <input type="text" class="form-control" placeholder="Title..." id="search-field">
                         </div>
-                        <input type="button" class="btn btn-success" id="searchButton" value="Search">
+                        <input type="button" class="btn btn-success" id="search-button" value="Search">
                     </div>
 
                 </div>
             </div>
         </nav>
-
         <div id="content" class="container page-contant">
             {{>content}}
         </div>

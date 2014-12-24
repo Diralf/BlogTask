@@ -17,9 +17,9 @@ exports.getData = function (db, newPage) {
     countPage = Math.ceil(db.length / max);
     if (countPage < 2) {
         page = 1;
-        return {};
+        return null;
     } else {
-        page = +newPage;
+        page = newPage ? +newPage : 1;
         var pages = [];
         for (var i = 0; i < countPage; i++) {
             pages[i] = {number: i + 1, active: (i + 1) === page};
@@ -33,7 +33,6 @@ exports.getData = function (db, newPage) {
         data.prev = page - 1;
         data.next = page + 1;
     }
-    console.log(data);
     return data;
 };
 

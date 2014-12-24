@@ -14,19 +14,17 @@
 
                 <div class="game-description row">
                     <div class="game-img col-sm-6">
-                        {{^full}}<a href="?post={{id}}">{{/full}}
+                        {{^full}}<div class="openpost" onclick="openPost({{id}})">{{/full}}
                             <img class="sizeble-img"  src={{image}}>
-                            {{^full}}</a>{{/full}}
+                            {{^full}}</div>{{/full}}
                     </div>
                     <div class='game-rating col-sm-5'>
                         {{^full}}
-                        <a class="nonoutline" href="?post={{id}}"> 
+                        <div class="openpost" onclick="openPost({{id}})"> 
                             <div class="game-header">
-
                                 <span>{{title}}</span>
-
                             </div>
-                        </a>
+                        </div>
                         {{/full}}
                         <p>{{#full}}Title: {{title}}<br>{{/full}}
                             Genre: {{genre}}<br>
