@@ -1,26 +1,37 @@
 var pagination = require('./pagination');
-
+var data = {
+    "full": false,
+    "game": [],
+    "pagination": {},
+    "isScreens": true,
+    "formatRelease": function () {
+        var dateString = this.toDateString();
+        return dateString;
+    }
+};
 
 exports.dataOnPage = function (db, page) {
-    var data = {
-        "full": false,
-        "pagination": {},
-        "post": []
-    };
-    var pag = pagination.getData(db.post, page);
+    data.full = false;
+    var pag = pagination.getData(db.game, page);
     data.pagination = pag;
-    data.post = pag ? db.post.slice(pag.begin, pag.end) : db.post;
+    data.game = pag ? db.game.slice(pag.begin, pag.end) : db.game;
     return data;
 };
 
-exports.dataOnePost = function (db, id) {
-    var data = {
-        "full": true,
-        "post": {}
-    };
-    data.post = db.post[id];
-    var screens = data.post.screenshots;
-    screens[0].active = true;
+exports.dataOneGame = function (db) {
+    data.full = true;
+    data.pagination = null;
+    data.game = {};
+    data.game = db.game[0];
+    var screens = data.game.screenshots;
+    if (!screens[0]) {
+        console.log("!screens");
+        data.isScreens = false;
+    } else {
+        console.log("screens");
+        data.isScreens = true;
+        screens[0].active = true;
+    }
     screens.forEach(function (item, i, arr) {
         item.id = i;
     });
@@ -28,14 +39,20 @@ exports.dataOnePost = function (db, id) {
 };
 
 exports.dataSearch = function (db, filter) {
-    var data = {
-        post: []
-    };
-    data.post = db.post.filter(function (item) {
+    data.game = db.game.filter(function (item) {
         return item.title.toLowerCase().indexOf(filter.toLowerCase()) > -1;
     });
     return data;
 };
+
+var formatDate = function () {
+    var dateString = this.toLocaleDateString("%b %e, %Y");
+    return dateString;
+};
+
+
+
+
 
 
 

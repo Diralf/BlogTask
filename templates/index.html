@@ -12,12 +12,16 @@
         <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/0.9.2/lodash.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/mustache.js-master/mustache.js" ></script>
+        <script src="js/right.js"></script>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="https://raw.githubusercontent.com/cowboy/jquery-hashchange/master/jquery.ba-hashchange.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/spin.js"></script>
+        <script src="js/right-calendar-src.js"></script>
 
     </head>
     <body>
+
         <div class="headimage home">
             <img  class="sizeble-head"  src="img/Joy3.png" alt="INDIECASE"/>
             <div class="head-title"><span>INDIECASE</span> </div>
@@ -39,19 +43,18 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active menuitem home"><a href="#">Games<span class="sr-only">(current)</span></a></li>
-                        <li class="dropdown menuitem">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Developers<span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">All</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Game Designs</a></li>
-                                <li><a href="#">Programming</a></li>
-                                <li><a href="#">Musics</a></li>
-                            </ul>
-                        </li>
+                        <li class="menuitem" id="searchMenuItem"><a href="#">Search<span class="sr-only">(current)</span></a></li>
+                        <li class="menuitem" id="addMenuItem"><a href="#">Add<span class="sr-only">(current)</span></a></li>
                     </ul>
                     <div class="navbar-form navbar-right navbar-inverse" id="form" >
                         <div class="form-group" >
+
+                            <input type="text" class="form-control" id='minDate' data-calendar="{listYears: true}" style="display: none;"/>
+                            <input type="text" class="form-control" id='maxDate' data-calendar="{listYears: true}" style="display: none;"/>
+                            <label class="nonoutline" id="labelDate">
+                                Use date search
+                                <input type='checkbox' class="form-control" id='checkDate'/>
+                            </label>
                             <input type="text" class="form-control" placeholder="Title..." id="search-field">
                         </div>
                         <input type="button" class="btn btn-success" id="search-button" value="Search">
@@ -60,11 +63,13 @@
                 </div>
             </div>
         </nav>
+        <div id="addForm" class="container page-contant"></div>
+        
         <div id="content" class="container page-contant">
             {{>content}}
         </div>
 
-        <footer class="page-footer"><div>EPAM blog task - create by Dmitry Kozlov 2014</div></footer>
+        <footer class="page-footer"><div>EPAM blog task - Dmitry Kozlov - 2014</div></footer>
         <script type="text/javascript" src="client.js"></script>
     </body>
 </html>

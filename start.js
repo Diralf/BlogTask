@@ -1,8 +1,3 @@
-
-/**
- * Module dependencies.
- */
-
 var express = require('express');
 var routes = require('./routes');
 var http = require('http');
@@ -12,7 +7,7 @@ var mustache = require('mustache-express');
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3000 );
 app.engine('html', mustache());
 app.set('view engine', 'html');
 app.set('views', __dirname + "/templates");
@@ -29,21 +24,17 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-/*
- content/			-> все записи, первая страница
- content/page/14			-> все записи, указанная страница
- content/search/filter		-> найденные записи, первая страница
- content/search/filter/page/2    -> найденные записи, указанная страница
- content/2			-> одна запись с указанным id
- */
 app.get('/content', routes.content);
 app.get('/content/page/:num', routes.content);
 app.get('/content/search/:filter', routes.content);
 app.get('/content/search/:filter/page/:num', routes.content);
+app.get('/content/date/:min/:max', routes.content);
+app.get('/content/date/:min/:max/page/:num', routes.content);
+app.get('/content/search/:filter/date/:min/:max', routes.content);
+app.get('/content/search/:filter/date/:min/:max/page/:num', routes.content);
 app.get('/content/:id', routes.content);
 
-//app.post('/content', routes.content);
-//app.get('/users', user.list);
+app.post('/content',routes.addGame);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
