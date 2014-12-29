@@ -1,9 +1,9 @@
 <div id="template-post-preview">
-    <div id="game-pagination-top">{{>pagination}}</div>
-    <div id="filter" ></div><!--style="display: none;"-->
+    {{#pagination}}<div id="game-pagination-top">{{>pagination}}</div>{{/pagination}}
+    <div id="filter" ></div>
     <div class="row">
         <div class=" blog-text" id="page-post">
-            {{#post}}
+            {{#game}}
             <div class="game-post img-rounded testpost" >
                 {{#full}}
                 <div class="game-header">
@@ -14,13 +14,13 @@
 
                 <div class="game-description row">
                     <div class="game-img col-sm-6">
-                        {{^full}}<div class="openpost" onclick="openPost({{id}})">{{/full}}
+                        {{^full}}<div class="openpost" onclick="openGame('{{_id}}')">{{/full}}
                             <img class="sizeble-img"  src={{image}}>
                             {{^full}}</div>{{/full}}
                     </div>
                     <div class='game-rating col-sm-5'>
                         {{^full}}
-                        <div class="openpost" onclick="openPost({{id}})"> 
+                        <div class="openpost" onclick="openGame('{{_id}}')"> 
                             <div class="game-header">
                                 <span>{{title}}</span>
                             </div>
@@ -29,7 +29,7 @@
                         <p>{{#full}}Title: {{title}}<br>{{/full}}
                             Genre: {{genre}}<br>
                             Developer: {{developer}}<br>
-                            Release Date: {{release}}</p>
+                            Release Date: {{#release}}{{formatRelease}}{{/release}}</p>
                         <div>
                             <p>Tags:</p>
                             {{#tags}}
@@ -37,9 +37,6 @@
                             {{/tags}}
                         </div>
 
-                    </div>
-                    <div class="game-footer">
-                        date: {{date}} author: {{author}}
                     </div>
                 </div>
 
@@ -52,6 +49,7 @@
                 {{/full}}
             </div>
             {{#full}}
+            {{#isScreens}}
             <div class="game-screenshot img-rounded" id="screenshot">
                 <div>
                     <div class="game-preview-screenshots" >
@@ -84,15 +82,16 @@
                     </a>
                 </div>
             </div>
+            {{/isScreens}}
             {{/full}}
 
 
-            {{/post}}
-            {{^post}}
-            <div class="game-post img-rounded testpost" >Publications not found.</div>
-            {{/post}}
+            {{/game}}
+            {{^game}}
+            <div class="game-post img-rounded testpost" >Game not found.</div>
+            {{/game}}
         </div>
     </div>
-    <div id="game-pagination-bottom">{{>pagination}}</div>
+    {{#pagination}}<div id="game-pagination-bottom">{{>pagination}}</div>{{/pagination}}
 </div>
 

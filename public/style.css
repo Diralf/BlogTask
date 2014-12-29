@@ -76,6 +76,10 @@ body {
     outline: none;
 }
 
+.whiteinput {
+    color: #000;
+}
+
 .game-header {
     font-size: 30px;
 }

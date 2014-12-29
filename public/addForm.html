@@ -1,0 +1,37 @@
+<div id="template-add-game">
+    <form method="POST" action="/content">
+        <div class="row">
+            <div class=" blog-text" id="page-post">
+                <div class="game-post img-rounded testpost" >
+                    <div class="game-header">
+                        <span>{{title}}</span>
+                    </div>
+                    <div class="game-description row">
+                        <div class="game-img col-sm-6">
+                            Image:<br>
+                            <input type="text" name="image" class="whiteinput">
+                        </div>
+                        <div class='game-rating col-sm-5'>
+                            <p>Title: <br>
+                                <input type="text" name="title" class="whiteinput"><br>
+                                Genre: <br>
+                                <input type="text" name="genre" class="whiteinput"><br>
+                                Developer: <br>
+                                <input type="text" name="developer" class="whiteinput"><br>
+                                Release Date: <br>
+                                <input type="text" name='release' data-calendar="{listYears: true}" class="whiteinput"/></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="game-body col-sm-7">
+                            <p>Description</p>
+                            <textarea rows="10" cols="45" name="description" class="whiteinput"></textarea>
+                        </div>
+                    </div>
+                    <input type="submit">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
