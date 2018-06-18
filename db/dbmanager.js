@@ -1,8 +1,8 @@
 var MongoClient = require('mongodb').MongoClient;
 var ObjectID = require('mongodb').ObjectID;
 // Connection URL
-var url = 'mongodb://diralf:mongo531mongo@ds029541.mongolab.com:29541/indiecase_games';
-
+var url = 'mongodb://diralf:mongo531mongo@ds029541.mlab.com:29541/indiecase_games';
+//mongodb://<dbuser>:<dbpassword>@ds029541.mlab.com:29541/indiecase_games
 var convertDate = function (data) {
     data.forEach(function (item) {
         item.release = new Date(item.release);
