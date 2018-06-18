@@ -76,6 +76,3 @@ exports.addGame = function (game, callback) {
         });
     });
 };
-=======
-};
->>>>>>> 11bdefb (finish)
